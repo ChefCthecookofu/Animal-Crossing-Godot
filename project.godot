@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="3D Multiplayer"
+config/name="Animal Crossing"
 run/main_scene="res://Game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="res://leaf_icon.svg"
+config/icon="res://leaf_icon.svg"
 
 [editor_plugins]
 
