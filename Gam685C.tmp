@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu65d4i5hhf0k"]
+
+[ext_resource type="PackedScene" uid="uid://83cr1otcfcpi" path="res://Player.tscn" id="1_iwce5"]
+[ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere.tscn" id="2_vtwrm"]
+[ext_resource type="Script" path="res://joystick_knob.gd" id="3_8cl2a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_suhex"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4js4y"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_iwce5")]
+
+[node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.50261, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1764, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_suhex")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_4js4y")
+
+[node name="Joystick" type="CanvasLayer" parent="."]
+
+[node name="Joystick Back" type="Control" parent="Joystick"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Joystick Knob" type="TextureRect" parent="Joystick/Joystick Back"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_8cl2a")

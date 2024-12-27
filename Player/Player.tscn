@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://83cr1otcfcpi"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_wvexg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uemtp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nioan"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_wvexg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_uemtp")
+
+[node name="CameraActive" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.860671, 0.509162, 0, -0.509162, 0.860671, -0.000886202, 3.60672, 4.28257)
+visible = false
+current = true
+
+[node name="CameraLow" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+visible = false
+
+[node name="CameraMid" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.860671, 0.509162, 0, -0.509162, 0.860671, -0.000886202, 3.60672, 4.28257)
+visible = false
+
+[node name="CameraHigh" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nioan")
