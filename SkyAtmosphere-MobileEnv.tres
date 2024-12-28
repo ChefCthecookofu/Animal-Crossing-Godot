@@ -1,0 +1,11 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://cinvg2ykyjsxo"]
+
+[sub_resource type="Sky" id="Sky_4m4g8"]
+
+[resource]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_4m4g8")
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.247059, 0.486275, 0.819608, 1)

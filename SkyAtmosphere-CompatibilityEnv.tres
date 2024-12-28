@@ -1,0 +1,9 @@
+[gd_resource type="Environment" format=3 uid="uid://caeo3pi865i63"]
+
+[resource]
+background_mode = 1
+background_color = Color(0.247059, 0.486275, 0.819608, 1)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+fog_enabled = true
+fog_light_color = Color(0.247059, 0.486275, 0.819608, 1)

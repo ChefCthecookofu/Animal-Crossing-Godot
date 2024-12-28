@@ -1,19 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cglrj4ahdiy5x"]
+[gd_scene load_steps=3 format=3 uid="uid://cglrj4ahdiy5x"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_5bydd"]
-turbidity = 389.75
-ground_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Sky" id="Sky_pp4p8"]
-sky_material = SubResource("PhysicalSkyMaterial_5bydd")
-
-[sub_resource type="Environment" id="Environment_51iv5"]
-background_mode = 1
-background_color = Color(1, 1, 1, 1)
-sky = SubResource("Sky_pp4p8")
-glow_enabled = true
-fog_enabled = true
-fog_light_color = Color(0.247059, 0.486275, 0.819608, 1)
+[ext_resource type="Environment" uid="uid://caeo3pi865i63" path="res://SkyAtmosphere-CompatibilityEnv.tres" id="1_homuk"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_enmxc"]
 
@@ -22,9 +9,13 @@ fog_light_color = Color(0.247059, 0.486275, 0.819608, 1)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 1.28028e-08, -0.707107, 0.707107, -3.09086e-08, 0.707107, -1.28028e-08, -1, -3.09086e-08, 0, 0, 0)
 shadow_enabled = true
-directional_shadow_mode = 1
-directional_shadow_blend_splits = true
+shadow_opacity = 0.9
+directional_shadow_split_1 = 0.4
+directional_shadow_split_2 = 0.6
+directional_shadow_split_3 = 0.8
+directional_shadow_max_distance = 30.0
+directional_shadow_pancake_size = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_51iv5")
+environment = ExtResource("1_homuk")
 camera_attributes = SubResource("CameraAttributesPractical_enmxc")
