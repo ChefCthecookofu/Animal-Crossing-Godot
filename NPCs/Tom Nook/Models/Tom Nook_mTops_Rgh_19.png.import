@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brifxjigiokit"
 path.s3tc="res://.godot/imported/Tom Nook_mTops_Rgh_19.png-af90e9e78bfb9eadf91ca4c349a5a4ed.s3tc.ctex"
+path.etc2="res://.godot/imported/Tom Nook_mTops_Rgh_19.png-af90e9e78bfb9eadf91ca4c349a5a4ed.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://NPCs/Tom Nook/Models/Tom Nook_mTops_Rgh_19.png"
-dest_files=["res://.godot/imported/Tom Nook_mTops_Rgh_19.png-af90e9e78bfb9eadf91ca4c349a5a4ed.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tom Nook_mTops_Rgh_19.png-af90e9e78bfb9eadf91ca4c349a5a4ed.s3tc.ctex", "res://.godot/imported/Tom Nook_mTops_Rgh_19.png-af90e9e78bfb9eadf91ca4c349a5a4ed.etc2.ctex"]
 
 [params]
 

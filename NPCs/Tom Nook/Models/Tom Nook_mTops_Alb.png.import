@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://du4puethn4fv1"
 path.s3tc="res://.godot/imported/Tom Nook_mTops_Alb.png-7736308ead4897a16f102fb3184b03b2.s3tc.ctex"
+path.etc2="res://.godot/imported/Tom Nook_mTops_Alb.png-7736308ead4897a16f102fb3184b03b2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://NPCs/Tom Nook/Models/Tom Nook_mTops_Alb.png"
-dest_files=["res://.godot/imported/Tom Nook_mTops_Alb.png-7736308ead4897a16f102fb3184b03b2.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tom Nook_mTops_Alb.png-7736308ead4897a16f102fb3184b03b2.s3tc.ctex", "res://.godot/imported/Tom Nook_mTops_Alb.png-7736308ead4897a16f102fb3184b03b2.etc2.ctex"]
 
 [params]
 
