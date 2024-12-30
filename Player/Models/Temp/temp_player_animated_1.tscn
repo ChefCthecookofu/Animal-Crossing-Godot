@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh8rsuwxe1ohw"]
+
+[ext_resource type="PackedScene" uid="uid://dsgl73tb1kk2a" path="res://Player/Models/Temp/TempPlayerAnimated1.fbx" id="1_5m4er"]
+[ext_resource type="Material" uid="uid://by5hgy34fux2d" path="res://Player/Models/Temp/TempPlayerMat.tres" id="2_iy2a7"]
+
+[node name="TempPlayerAnimated1" instance=ExtResource("1_5m4er")]
+
+[node name="Skeleton3D" parent="Player" index="0"]
+bones/4/rotation = Quaternion(0.0436194, 5.70853e-10, 1.0384e-08, 0.999048)
+bones/8/rotation = Quaternion(-0.0194897, -0.0103771, 0.463042, 0.886061)
+bones/13/rotation = Quaternion(-0.0194897, 0.0103771, -0.463042, 0.886061)
+bones/17/rotation = Quaternion(-0.000245639, 0.221549, 0.97492, 0.0211595)
+bones/20/rotation = Quaternion(0.10852, 0.0407575, -0.0148009, 0.993148)
+bones/22/rotation = Quaternion(-0.00277771, 0.0800947, 0.996563, -0.0209781)
+bones/25/rotation = Quaternion(0.157904, -0.0582233, 0.0116158, 0.985668)
+
+[node name="PlayerBody" parent="Player/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_iy2a7")

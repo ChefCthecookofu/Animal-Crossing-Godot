@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu65d4i5hhf0k"]
+[gd_scene load_steps=7 format=3 uid="uid://bu65d4i5hhf0k"]
 
 [ext_resource type="PackedScene" uid="uid://83cr1otcfcpi" path="res://Player/Player.tscn" id="1_iwce5"]
 [ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere.tscn" id="2_vtwrm"]
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_2t1br"]
 [ext_resource type="PackedScene" uid="uid://de3moed4b26of" path="res://NPCs/Tom Nook/Models/Tom Nook.glb" id="4_4stud"]
 [ext_resource type="PackedScene" uid="uid://c0wb7fen03b6o" path="res://Furniture/Workbench/Mini/FtrWorkbenchS.fbx" id="5_2u35m"]
 
@@ -13,7 +12,7 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iwce5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24494, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111054, 0)
 
 [node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.50261, 0)
@@ -28,16 +27,6 @@ mesh = SubResource("BoxMesh_suhex")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("BoxShape3D_4js4y")
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Virtual Joystick" parent="UI" instance=ExtResource("3_2t1br")]
-joystick_mode = 1
-visibility_mode = 2
-action_left = "move_left"
-action_right = "move_right"
-action_up = "move_forward"
-action_down = "move_backward"
 
 [node name="Tom Nook" parent="." instance=ExtResource("4_4stud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87737, -0.859507, -0.0540216)
