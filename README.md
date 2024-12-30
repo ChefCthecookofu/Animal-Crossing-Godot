@@ -1,4 +1,6 @@
-Animal Crossing Godot
+#########################
+# Animal Crossing Godot #
+#########################
 
 WIP implementation of Animal Crossing in the Godot game engine
 

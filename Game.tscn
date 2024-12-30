@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c0wb7fen03b6o" path="res://Furniture/Workbench/Mini/FtrWorkbenchS.fbx" id="5_2u35m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_suhex"]
+size = Vector3(5, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4js4y"]
+size = Vector3(5, 1, 5)
 
 [node name="Node3D" type="Node3D"]
 
@@ -21,11 +23,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.50261, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35951, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_suhex")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("BoxShape3D_4js4y")
 
 [node name="Tom Nook" parent="." instance=ExtResource("4_4stud")]
