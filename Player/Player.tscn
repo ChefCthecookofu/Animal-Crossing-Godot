@@ -22,7 +22,6 @@ mesh = ExtResource("2_325cp")
 transform = Transform3D(1, 0, 0, 0, 0.860671, 0.509162, 0, -0.509162, 0.860671, -0.000886202, 3.60672, 4.28257)
 visible = false
 current = true
-fov = 127.2
 
 [node name="CameraLow" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
