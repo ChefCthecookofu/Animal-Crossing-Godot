@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu65d4i5hhf0k"]
 
 [ext_resource type="PackedScene" uid="uid://83cr1otcfcpi" path="res://Player/Player.tscn" id="1_iwce5"]
-[ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere.tscn" id="2_vtwrm"]
+[ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere/SkyAtmosphere.tscn" id="2_vtwrm"]
 [ext_resource type="PackedScene" uid="uid://de3moed4b26of" path="res://NPCs/Tom Nook/Models/Tom Nook.glb" id="4_4stud"]
 [ext_resource type="PackedScene" uid="uid://c0wb7fen03b6o" path="res://Furniture/Workbench/Mini/FtrWorkbenchS.fbx" id="5_2u35m"]
 
@@ -14,10 +14,10 @@ size = Vector3(5, 1, 5)
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iwce5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111054, 0)
+transform = Transform3D(0.788666, 0, 0.614822, 0, 1, 0, -0.614822, 0, 0.788666, 0, -0.111054, 0)
 
 [node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.50261, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41901, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35951, 0)

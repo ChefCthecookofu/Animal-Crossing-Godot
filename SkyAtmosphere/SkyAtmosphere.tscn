@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cglrj4ahdiy5x"]
+
+[ext_resource type="Script" path="res://SkyAtmosphere/sky_atmosphere.gd" id="1_s8v4g"]
+[ext_resource type="Material" uid="uid://xgtde4qw1qp4" path="res://SkyAtmosphere/DynamicSky.tres" id="1_sookq"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_pptk3"]
+
+[sub_resource type="Sky" id="Sky_cu8qq"]
+sky_material = ExtResource("1_sookq")
+
+[sub_resource type="Environment" id="Environment_lc0qs"]
+background_mode = 2
+sky = SubResource("Sky_cu8qq")
+ambient_light_source = 3
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_enmxc"]
+
+[node name="SkyAtmosphere" type="Node3D"]
+script = ExtResource("1_s8v4g")
+sky = ExtResource("1_sookq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+shadow_enabled = true
+shadow_opacity = 0.9
+directional_shadow_split_1 = 0.4
+directional_shadow_split_2 = 0.6
+directional_shadow_split_3 = 0.8
+directional_shadow_max_distance = 30.0
+directional_shadow_pancake_size = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DirectionalLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_pptk3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lc0qs")
+camera_attributes = SubResource("CameraAttributesPractical_enmxc")

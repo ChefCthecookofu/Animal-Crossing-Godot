@@ -34,15 +34,11 @@ func _physics_process(delta: float) -> void:
 			mesh.global_transform = Transform3D(smooth_rotation, mesh.global_transform.origin)
 			mesh.get_node("AnimationPlayer").play(animation_run)
 			mesh.get_node("AnimationPlayer").speed_scale = (velocity.length()/SPEED) * animation_run_speed
-			
-			print(velocity.length()/SPEED)
-			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 			mesh.get_node("AnimationPlayer").play(animation_idle)
 			mesh.get_node("AnimationPlayer").speed_scale = 1 * animation_idle_speed
-		
 	else:
 		velocity += get_gravity() * delta
 
