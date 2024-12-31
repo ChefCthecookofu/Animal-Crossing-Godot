@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://83cr1otcfcpi"]
+[gd_scene load_steps=7 format=3 uid="uid://83cr1otcfcpi"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_wvexg"]
 [ext_resource type="ArrayMesh" uid="uid://cinsc12lr6235" path="res://Player/Models/Temp/Player Temp.obj" id="2_325cp"]
 [ext_resource type="PackedScene" uid="uid://bh8rsuwxe1ohw" path="res://Player/Models/Temp/temp_player_animated_1.tscn" id="2_tge7m"]
 [ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="4_nc0uf"]
+[ext_resource type="PackedScene" uid="uid://baaxopuj6623s" path="res://UI/TextBox/TextBox.tscn" id="5_glhbt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nioan"]
 radius = 0.439618
@@ -46,3 +47,5 @@ action_right = "move_right"
 action_up = "move_forward"
 action_down = "move_backward"
 metadata/_edit_use_anchors_ = true
+
+[node name="TextBox" parent="UI" instance=ExtResource("5_glhbt")]

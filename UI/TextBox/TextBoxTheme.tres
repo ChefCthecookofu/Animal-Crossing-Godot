@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bai0c4rbx4d1w"]
+
+[ext_resource type="FontVariation" uid="uid://byf22tjnldeo6" path="res://UI/Fonts/TextBoxContentFont.tres" id="1_ht3ax"]
+
+[resource]
+default_font = ExtResource("1_ht3ax")
+default_font_size = 24
+RichTextLabel/colors/default_color = Color(0.509804, 0.454902, 0.341176, 1)

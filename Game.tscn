@@ -2,34 +2,39 @@
 
 [ext_resource type="PackedScene" uid="uid://83cr1otcfcpi" path="res://Player/Player.tscn" id="1_iwce5"]
 [ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere/SkyAtmosphere.tscn" id="2_vtwrm"]
-[ext_resource type="PackedScene" uid="uid://de3moed4b26of" path="res://NPCs/Tom Nook/Models/Tom Nook.glb" id="4_4stud"]
-[ext_resource type="PackedScene" uid="uid://c0wb7fen03b6o" path="res://Furniture/Workbench/Mini/FtrWorkbenchS.fbx" id="5_2u35m"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_suhex"]
-size = Vector3(5, 1, 5)
+[ext_resource type="PackedScene" uid="uid://bjibbc7hklffo" path="res://World/Temp/DemoLandscape/diorama_abrilotormin.fbx" id="3_10rkp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4js4y"]
-size = Vector3(5, 1, 5)
+size = Vector3(12.7773, 0.793945, 11.4668)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fseq"]
+size = Vector3(4.52612, 4.2959, 3.4122)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mmt04"]
+size = Vector3(0.955246, 1.84326, 0.778507)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iwce5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111054, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111054, 4.35163)
 
 [node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41901, 0)
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="DemoTerrain" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35951, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-mesh = SubResource("BoxMesh_suhex")
+[node name="Mesh" parent="DemoTerrain" instance=ExtResource("3_10rkp")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="CollisionShape_Ground" type="CollisionShape3D" parent="DemoTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124023, -0.335449, 1.33598)
 shape = SubResource("BoxShape3D_4js4y")
 
-[node name="Tom Nook" parent="." instance=ExtResource("4_4stud")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87737, -0.859507, -0.0540216)
+[node name="CollisionShape_House" type="CollisionShape3D" parent="DemoTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18023, 1.64795, 0.0847466)
+shape = SubResource("BoxShape3D_8fseq")
 
-[node name="FtrWorkbenchS" parent="." instance=ExtResource("5_2u35m")]
-transform = Transform3D(-2.18557e-07, 0, 5, 0, 5, 0, -5, 0, -2.18557e-07, -1.93914, -0.859507, 1.48359)
+[node name="CollisionShape_Mail" type="CollisionShape3D" parent="DemoTerrain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76867, 0.421631, 2.02234)
+shape = SubResource("BoxShape3D_mmt04")

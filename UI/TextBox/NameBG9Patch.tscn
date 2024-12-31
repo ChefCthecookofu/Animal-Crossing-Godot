@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqqat0d1lpea1"]
+
+[ext_resource type="Texture2D" uid="uid://da6iuxlhikarc" path="res://UI/TextBox/NameBubble9Patch.png" id="1_25xwc"]
+
+[node name="NameBG" type="NinePatchRect"]
+offset_left = -320.0
+offset_top = -500.0
+offset_right = -254.0
+offset_bottom = -434.0
+texture = ExtResource("1_25xwc")
+patch_margin_left = 33
+patch_margin_top = 33
+patch_margin_right = 33
+patch_margin_bottom = 33
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

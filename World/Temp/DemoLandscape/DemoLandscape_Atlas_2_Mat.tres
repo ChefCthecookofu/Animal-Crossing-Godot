@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b5n07gthddlsr"]
+
+[ext_resource type="Texture2D" uid="uid://0x03dqbfwxip" path="res://World/Temp/DemoLandscape/diorama_abrilotormin_M_ATLAS_2_BaseColor.png" id="1_nhavt"]
+[ext_resource type="Texture2D" uid="uid://blifm6qlbqb3l" path="res://World/Temp/DemoLandscape/diorama_abrilotormin_M_ATLAS_2_Metallic.png" id="2_jg2d7"]
+[ext_resource type="Texture2D" uid="uid://dt4n1ixqd4ejo" path="res://World/Temp/DemoLandscape/diorama_abrilotormin_M_ATLAS_2_Normal.png" id="3_j70nj"]
+[ext_resource type="Texture2D" uid="uid://b525lva0eh83b" path="res://World/Temp/DemoLandscape/diorama_abrilotormin_M_ATLAS_2_Roughness.png" id="4_o67iy"]
+
+[resource]
+albedo_texture = ExtResource("1_nhavt")
+metallic = 1.0
+metallic_texture = ExtResource("2_jg2d7")
+roughness_texture = ExtResource("4_o67iy")
+normal_enabled = true
+normal_texture = ExtResource("3_j70nj")

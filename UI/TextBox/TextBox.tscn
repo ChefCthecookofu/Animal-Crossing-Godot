@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://baaxopuj6623s"]
+
+[ext_resource type="Shader" path="res://UI/TextBox/TextBoxWobble.gdshader" id="1_rajli"]
+[ext_resource type="Script" path="res://UI/TextBox/text_box.gd" id="1_sd8y0"]
+[ext_resource type="Texture2D" uid="uid://8b57xqwytwxu" path="res://UI/TextBox/Text Bubble.svg" id="2_37vw0"]
+[ext_resource type="Theme" uid="uid://bai0c4rbx4d1w" path="res://UI/TextBox/TextBoxTheme.tres" id="3_xatb2"]
+[ext_resource type="PackedScene" uid="uid://bqqat0d1lpea1" path="res://UI/TextBox/NameBG9Patch.tscn" id="5_dpdyh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mm33t"]
+shader = ExtResource("1_rajli")
+shader_parameter/speed = 1.5
+shader_parameter/amplitude = 0.02
+shader_parameter/frequency = 10.0
+
+[node name="TextBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd8y0")
+
+[node name="Bubble" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_mm33t")
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -220.0
+offset_right = 320.0
+offset_bottom = -40.8323
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_37vw0")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="ContentText" type="RichTextLabel" parent="Bubble"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 36.0
+offset_right = 604.0
+offset_bottom = 159.0
+theme = ExtResource("3_xatb2")
+bbcode_enabled = true
+text = "Wow, you just keep turning up today. It's like you're only playing offense, zip zoom."
+scroll_active = false
+
+[node name="NameText" type="RichTextLabel" parent="Bubble"]
+y_sort_enabled = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -89.5839
+offset_right = -237.0
+offset_bottom = -61.5839
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.174533
+theme = ExtResource("3_xatb2")
+bbcode_enabled = true
+text = "Scoot"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NameBG" parent="Bubble/NameText" instance=ExtResource("5_dpdyh")]
+layout_mode = 0
+offset_left = -9.0
+offset_top = -10.0
+offset_right = 140.0
+offset_bottom = 56.0
+scale = Vector2(0.7, 0.7)
