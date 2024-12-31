@@ -16,7 +16,7 @@ size = Vector3(0.955246, 1.84326, 0.778507)
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iwce5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.111054, 4.35163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541812, 3.24029)
 
 [node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41901, 0)
@@ -32,7 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124023, -0.335449, 1.33598)
 shape = SubResource("BoxShape3D_4js4y")
 
 [node name="CollisionShape_House" type="CollisionShape3D" parent="DemoTerrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18023, 1.64795, 0.0847466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471161, 1.64795, 0.0847466)
 shape = SubResource("BoxShape3D_8fseq")
 
 [node name="CollisionShape_Mail" type="CollisionShape3D" parent="DemoTerrain"]
