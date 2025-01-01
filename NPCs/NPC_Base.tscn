@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctfmmxigiop3f"]
+
+[ext_resource type="Script" path="res://NPCs/npc_base.gd" id="1_sic86"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_frvd5"]
+height = 1.42063
+
+[node name="NPC_Base" type="CharacterBody3D"]
+script = ExtResource("1_sic86")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_frvd5")

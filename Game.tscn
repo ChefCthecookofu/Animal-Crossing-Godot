@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu65d4i5hhf0k"]
+[gd_scene load_steps=9 format=3 uid="uid://bu65d4i5hhf0k"]
 
 [ext_resource type="PackedScene" uid="uid://83cr1otcfcpi" path="res://Player/Player.tscn" id="1_iwce5"]
 [ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere/SkyAtmosphere.tscn" id="2_vtwrm"]
 [ext_resource type="PackedScene" uid="uid://bjibbc7hklffo" path="res://World/Temp/DemoLandscape/diorama_abrilotormin.fbx" id="3_10rkp"]
+[ext_resource type="PackedScene" uid="uid://ctfmmxigiop3f" path="res://NPCs/NPC_Base.tscn" id="4_l5qkc"]
+[ext_resource type="PackedScene" uid="uid://dsgl73tb1kk2a" path="res://Player/Models/Temp/TempPlayerAnimated1.fbx" id="5_8lpu3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4js4y"]
 size = Vector3(12.7773, 0.793945, 11.4668)
@@ -16,13 +18,16 @@ size = Vector3(0.955246, 1.84326, 0.778507)
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_iwce5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.541812, 3.24029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966958, 3.24029)
 
-[node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.41901, 0)
+[node name="NPC_Base" parent="." instance=ExtResource("4_l5qkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88628, 0.931311, 3.01003)
+mesh_scene = ExtResource("5_8lpu3")
+animation_idle_name = "Player|Idle"
+animation_run_name = "Player|Run"
 
 [node name="DemoTerrain" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35951, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14926, 0)
 
 [node name="Mesh" parent="DemoTerrain" instance=ExtResource("3_10rkp")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
@@ -38,3 +43,6 @@ shape = SubResource("BoxShape3D_8fseq")
 [node name="CollisionShape_Mail" type="CollisionShape3D" parent="DemoTerrain"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76867, 0.421631, 2.02234)
 shape = SubResource("BoxShape3D_mmt04")
+
+[node name="SkyAtmosphere" parent="." instance=ExtResource("2_vtwrm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92778, 0)

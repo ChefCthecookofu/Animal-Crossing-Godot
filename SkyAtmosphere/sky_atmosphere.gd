@@ -18,7 +18,7 @@ extends Node3D
 var time_dict = Time.get_datetime_dict_from_system()
 var time_of_day = time_dict["second"]
 var norm_time_of_day = remap(time_of_day, 0, 86400, 0, 1)
-var debug = true
+@export var debug : bool = false
 
 func _process(_delta):
 	# Get time in seconds and normalize it (0-1)
@@ -29,7 +29,7 @@ func _process(_delta):
 	else:
 		time_of_day = (time_dict["hour"] * 3600) + (time_dict["minute"] * 60) + time_dict["second"]
 		norm_time_of_day = remap(time_of_day, 0, 86400, 0, 1)
-	print(norm_time_of_day)
+	
 	# Update the sun's rotation based on the time of day
 	var sun_angle = 90 + (norm_time_of_day * -360)
 	sun.rotation_degrees = Vector3(sun_angle, 0, 0)
