@@ -9,9 +9,11 @@ extends Node3D
 @export var twilight_horizon_color = Color(0.76, 0.24, 0.0)
 @export var night_top_color = Color(0.0, 0.0, 0.1)
 @export var night_horizon_color = Color(0.06, 0.14, 0.19)
+@export var sky_color_transition_curve : Curve
 
 @export var sun_energy_day = 1.0
 @export var sun_energy_night = 0
+@export var sun_energy_transition_curve : Curve
 
 var time_dict = Time.get_datetime_dict_from_system()
 var time_of_day = time_dict["second"]
@@ -22,12 +24,12 @@ func _process(_delta):
 	# Get time in seconds and normalize it (0-1)
 	time_dict = Time.get_datetime_dict_from_system()
 	if debug and OS.has_feature("editor"):
-		time_of_day = time_dict["second"]
+		time_of_day = time_dict["second"] #(Time.get_ticks_msec() / 1000) % 24
 		norm_time_of_day = remap(time_of_day, 0, 60, 0, 1)
 	else:
 		time_of_day = (time_dict["hour"] * 3600) + (time_dict["minute"] * 60) + time_dict["second"]
 		norm_time_of_day = remap(time_of_day, 0, 86400, 0, 1)
-
+	print(norm_time_of_day)
 	# Update the sun's rotation based on the time of day
 	var sun_angle = 90 + (norm_time_of_day * -360)
 	sun.rotation_degrees = Vector3(sun_angle, 0, 0)
@@ -35,7 +37,11 @@ func _process(_delta):
 	# Update the sky colors to simulate day and night transitions
 	if sky:
 		# Calculate the blending factor for the top and horizon colors using a cosine function.
-		var blend_factor = (cos(norm_time_of_day * PI * 2) + 1) / 2  # This will oscillate between 0 and 1
+		var blend_factor = 0
+		if sky_color_transition_curve:
+			blend_factor = sky_color_transition_curve.sample(norm_time_of_day)
+		else:
+			blend_factor = (cos(norm_time_of_day * PI * 2) + 1) / 2  # This will oscillate between 0 and 1
 
 		#Blend sky colors
 		var top_color : Color
@@ -53,6 +59,9 @@ func _process(_delta):
 		sky.ground_bottom_color = top_color
 		sky.ground_horizon_color = horizon_color
 
-
 		# Simulate sun intensity for day/night cycle
+		if sun_energy_transition_curve:
+			blend_factor = sun_energy_transition_curve.sample(norm_time_of_day)
+		else:
+			blend_factor = (cos(norm_time_of_day * PI * 2) + 1) / 2
 		sun.light_energy = remap(1 - blend_factor, 0, 1, sun_energy_night, sun_energy_day)

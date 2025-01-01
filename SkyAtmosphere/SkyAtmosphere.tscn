@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cglrj4ahdiy5x"]
+[gd_scene load_steps=9 format=3 uid="uid://cglrj4ahdiy5x"]
 
 [ext_resource type="Script" path="res://SkyAtmosphere/sky_atmosphere.gd" id="1_s8v4g"]
 [ext_resource type="Material" uid="uid://xgtde4qw1qp4" path="res://SkyAtmosphere/DynamicSky.tres" id="1_sookq"]
+[ext_resource type="Curve" uid="uid://dm5c4w6aehc36" path="res://SkyAtmosphere/Sky_Color_Transition_Curve.tres" id="3_ym2i0"]
+[ext_resource type="Curve" uid="uid://tp2uiqre7aki" path="res://SkyAtmosphere/Sun_Energy_Transition_Curve.tres" id="4_lpgvf"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_pptk3"]
 
@@ -18,6 +20,8 @@ ambient_light_source = 3
 [node name="SkyAtmosphere" type="Node3D"]
 script = ExtResource("1_s8v4g")
 sky = ExtResource("1_sookq")
+sky_color_transition_curve = ExtResource("3_ym2i0")
+sun_energy_transition_curve = ExtResource("4_lpgvf")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0)
