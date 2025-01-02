@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://daj0olyce8e8f"]
+
+[ext_resource type="Shader" path="res://SkyAtmosphere/Mobile/GradientSkyShader.gdshader" id="1_umha0"]
+
+[resource]
+shader = ExtResource("1_umha0")
+shader_parameter/sky_top_color = Color(0.385, 0.454, 0.55, 1)
+shader_parameter/sky_horizon_color = Color(0.646, 0.656, 0.67, 1)
+shader_parameter/sky_curve = 0.15
+shader_parameter/sky_energy = 1.0
+shader_parameter/ground_bottom_color = Color(0.2, 0.169, 0.133, 1)
+shader_parameter/ground_horizon_color = Color(0.646, 0.656, 0.67, 1)
+shader_parameter/ground_curve = 0.02
+shader_parameter/ground_energy = 1.0
+shader_parameter/exposure = 1.0
+shader_parameter/sun_angle_max = 30.0
+shader_parameter/sun_curve = 0.01
+shader_parameter/sun_color = Color(1, 1, 0.8, 1)
