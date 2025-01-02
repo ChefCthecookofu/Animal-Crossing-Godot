@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bu65d4i5hhf0k"]
+[gd_scene load_steps=8 format=3 uid="uid://bu65d4i5hhf0k"]
 
 [ext_resource type="PackedScene" uid="uid://83cr1otcfcpi" path="res://Player/Player.tscn" id="1_iwce5"]
 [ext_resource type="PackedScene" uid="uid://bjibbc7hklffo" path="res://World/Temp/DemoLandscape/diorama_abrilotormin.fbx" id="3_10rkp"]
 [ext_resource type="PackedScene" uid="uid://ctfmmxigiop3f" path="res://NPCs/NPC_Base.tscn" id="4_l5qkc"]
-[ext_resource type="PackedScene" uid="uid://dsgl73tb1kk2a" path="res://Player/Models/Temp/TempPlayerAnimated1.fbx" id="5_8lpu3"]
-[ext_resource type="PackedScene" uid="uid://drcb8c7ww777a" path="res://SkyAtmosphere/Mobile/SkyAtmosphereMobile.tscn" id="6_ncvk4"]
+[ext_resource type="PackedScene" uid="uid://cglrj4ahdiy5x" path="res://SkyAtmosphere/SkyAtmosphere.tscn" id="5_wnr7i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4js4y"]
 size = Vector3(12.7773, 0.793945, 11.4668)
@@ -21,10 +20,7 @@ size = Vector3(0.955246, 1.84326, 0.778507)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966958, 3.24029)
 
 [node name="NPC_Base" parent="." instance=ExtResource("4_l5qkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.88628, 0.931311, 3.01003)
-mesh_scene = ExtResource("5_8lpu3")
-animation_idle_name = "Player|Idle"
-animation_run_name = "Player|Run"
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.42018, 0.857718, 4.05606)
 
 [node name="DemoTerrain" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14926, 0)
@@ -44,5 +40,4 @@ shape = SubResource("BoxShape3D_8fseq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76867, 0.421631, 2.02234)
 shape = SubResource("BoxShape3D_mmt04")
 
-[node name="SkyAtmosphereMobile" parent="." instance=ExtResource("6_ncvk4")]
-debug = true
+[node name="SkyAtmosphere" parent="." instance=ExtResource("5_wnr7i")]

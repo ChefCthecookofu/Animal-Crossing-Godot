@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctfmmxigiop3f"]
+[gd_scene load_steps=4 format=3 uid="uid://ctfmmxigiop3f"]
 
 [ext_resource type="Script" path="res://NPCs/npc_base.gd" id="1_sic86"]
+[ext_resource type="PackedScene" uid="uid://dsgl73tb1kk2a" path="res://Player/Models/Temp/TempPlayerAnimated1.fbx" id="2_3vpfr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_frvd5"]
 height = 1.42063
 
 [node name="NPC_Base" type="CharacterBody3D"]
 script = ExtResource("1_sic86")
+mesh_scene = ExtResource("2_3vpfr")
+animation_idle_name = "Player|Idle"
+animation_run_name = "Player|Run"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_frvd5")

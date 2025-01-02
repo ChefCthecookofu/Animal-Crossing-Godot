@@ -5,9 +5,7 @@ class_name NPC
 const SPEED = 4
 const ROT_SPEED = 10
 
-@export var mesh_scene : PackedScene :
-	set(value):
-		_update_mesh()
+@export var mesh_scene : PackedScene
 @export var animation_idle_name : String = ""
 @export var animation_idle_speed : float = 1.0
 @export var animation_run_name : String = ""
@@ -16,17 +14,6 @@ const ROT_SPEED = 10
 @onready var mesh_inst: Node3D = null
 
 func _ready() -> void:
-	_update_mesh()
-
-func _notification(what: int) -> void:
-	if what == NOTIFICATION_ENTER_TREE:
-		# Update the mesh when the node enters the scene tree
-		_update_mesh()
-	elif what == NOTIFICATION_EDITOR_POST_SAVE:
-		# Update the mesh when the scene is saved in the editor
-		_update_mesh()
-
-func _update_mesh() -> void:
 	if mesh_scene:
 		# Instantiate the new mesh from the PackedScene
 		mesh_inst = mesh_scene.instantiate()
@@ -37,13 +24,16 @@ func _update_mesh() -> void:
 
 func _physics_process(delta: float) -> void:
 	if mesh_inst:
+		# Add gravity and movement logic
 		if is_on_floor():
 			var direction := Vector3.ZERO
 
+			# Example movement and rotation handling
 			if direction != Vector3.ZERO:
 				velocity.x = direction.x * SPEED
 				velocity.z = direction.z * SPEED
 
+				# Smoothly rotate the mesh to face the movement direction
 				var target_rotation = Quaternion(Basis(Vector3.UP, atan2(direction.x, direction.z)))
 				var current_rotation = mesh_inst.global_transform.basis.get_rotation_quaternion()
 				var smooth_rotation = current_rotation.slerp(target_rotation, delta * ROT_SPEED)
@@ -56,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity += get_gravity() * delta
 
+		# Move the character
 		move_and_slide()
 
 func play_animation(animation_name: String, speed: float) -> void:
